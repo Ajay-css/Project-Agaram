@@ -115,9 +115,12 @@ const Hero = () => {
                 {/* Mobile Menu */}
                 <div className={`fixed inset-0 z-[100] bg-black/40 text-black backdrop-blur flex flex-col items-center justify-center text-lg gap-8 md:hidden transition-transform duration-300 ${menuOpen ? "translate-x-0" : "-translate-x-full"}`} >
                     <a href="/" className="text-white">Home</a>
-                    <a href="/products" className="text-white">Products</a>
-                    <a href="/stories" className="text-white">Stories</a>
-                    <a href="/pricing" className="text-white">Pricing</a>
+                    <a href="/products" className="text-white">Home</a>
+                    <a href="/stories" className="text-white">Features</a>
+                    <a href="/pricing" className="text-white">Reviews</a>
+                    <Link to={"/register"} className="hidden md:block px-6 py-2 bg-indigo-500 hover:bg-indigo-700 active:scale-95 transition-all rounded-full text-white">
+                        Get started
+                    </Link>
                     <button onClick={() => setMenuOpen(false)} className="active:ring-3 active:ring-white aspect-square size-10 p-1 items-center justify-center bg-indigo-600 hover:bg-indigo-700 transition text-white rounded-md flex" >
                         X
                     </button>
@@ -158,10 +161,10 @@ const Hero = () => {
 
                     {/* CTA Buttons */}
                     <div className="flex items-center gap-4 ">
-                        <a href='/' className="bg-indigo-500 hover:bg-indigo-600 text-white rounded-full px-9 h-12 m-1 ring-offset-2 ring-1 ring-indigo-400 flex items-center transition-colors">
+                        <Link to='/login' className="bg-indigo-500 hover:bg-indigo-600 text-white rounded-full px-9 h-12 m-1 ring-offset-2 ring-1 ring-indigo-400 flex items-center transition-colors">
                             Get started
                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-arrow-right ml-1 size-4" aria-hidden="true"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
-                        </a>
+                        </Link>
                     </div>
 
                     <p className="py-6 text-slate-600 mt-14">Trusting by leading brands, including</p>
