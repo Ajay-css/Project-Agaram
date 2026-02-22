@@ -83,8 +83,7 @@ export default function Register() {
             required
             value={formData.name}
             onChange={handleChange}
-            className="w-full pl-11 pr-4 py-3 rounded-full border border-gray-200 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-100 outline-none transition"
-          />
+            className="w-full pl-11 pr-4 py-3 rounded-full border bg-white text-black border-gray-400 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-100 outline-none transition" />
         </div>
 
         {/* Email */}
@@ -97,7 +96,7 @@ export default function Register() {
             required
             value={formData.email}
             onChange={handleChange}
-            className="w-full pl-11 pr-4 py-3 rounded-full border border-gray-200 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-100 outline-none transition"
+            className="w-full pl-11 pr-4 py-3 rounded-full border bg-white text-black border-gray-400 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-100 outline-none transition"
           />
         </div>
 
@@ -112,7 +111,7 @@ export default function Register() {
             required
             value={formData.password}
             onChange={handleChange}
-            className="w-full pl-11 pr-11 py-3 rounded-full border border-gray-200 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-100 outline-none transition"
+            className="w-full pl-11 pr-4 py-3 rounded-full border bg-white text-black border-gray-400 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-100 outline-none transition"
           />
 
           <button
@@ -131,9 +130,37 @@ export default function Register() {
           whileTap={{ scale: 0.97 }}
           type="submit"
           disabled={loading}
-          className="w-full py-3 rounded-full bg-indigo-600 hover:bg-indigo-700 text-white font-medium transition"
+          className="w-full text-center pl-11 pr-4 py-3 rounded-full border bg-blue-600 text-black border-gray-400 
+             focus:border-indigo-500 focus:ring-2 focus:ring-indigo-100 
+             outline-none transition flex items-center justify-center gap-2 
+             disabled:opacity-70"
         >
-          {loading ? "Creating..." : "Sign Up"}
+          {loading ? (
+            <>
+              <svg
+                className="w-5 h-5 animate-spin text-blue-600"
+                viewBox="0 0 24 24"
+                fill="none"
+              >
+                <circle
+                  className="opacity-25"
+                  cx="12"
+                  cy="12"
+                  r="10"
+                  stroke="currentColor"
+                  strokeWidth="4"
+                />
+                <path
+                  className="opacity-75"
+                  fill="currentColor"
+                  d="M4 12a8 8 0 018-8v4a4 4 0 00-4 4H4z"
+                />
+              </svg>
+              <span>Creating...</span>
+            </>
+          ) : (
+            <p className="text-white text-center mr-2">Sign Up</p>
+          )}
         </motion.button>
 
         <p className="text-center text-sm text-gray-500 mt-6">

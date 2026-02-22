@@ -4,7 +4,7 @@ const messageSchema = new mongoose.Schema(
   {
     role: {
       type: String,
-      enum: ["system", "ai", "user"],
+      enum: ["system", "assistant", "user"],
       required: true,
     },
     content: {
@@ -18,28 +18,14 @@ const messageSchema = new mongoose.Schema(
 
 const interviewSchema = new mongoose.Schema(
   {
-    userId: {
+    user: {
       type: mongoose.Schema.Types.ObjectId,
       ref: "User",
       required: true,
     },
-
-    role: {
-      type: String,
-      required: true,
-      trim: true,
-    },
-
-    difficulty: {
-      type: String,
-      required: true,
-      trim: true,
-    },
-
-    liveFeedback: {
-      type: Boolean,
-      default: false,
-    },
+    role: { type: String, required: true, trim: true },
+    difficulty: { type: String, required: true, trim: true },
+    liveFeedback: { type: Boolean, default: false },
 
     messages: {
       type: [messageSchema],
@@ -48,45 +34,22 @@ const interviewSchema = new mongoose.Schema(
 
     status: {
       type: String,
-      enum: ["active", "completed"],   // 🔥 aligned with controller
+      enum: ["active", "completed"],
       default: "active",
     },
 
     questionCount: {
       type: Number,
       default: 0,
-      min: 0,
     },
 
     result: {
-      overallScore: {
-        type: Number,
-        min: 0,
-        max: 100,
-      },
-      communication: {
-        type: Number,
-        min: 0,
-        max: 100,
-      },
-      technical: {
-        type: Number,
-        min: 0,
-        max: 100,
-      },
-      confidence: {
-        type: Number,
-        min: 0,
-        max: 100,
-      },
-      improvements: {
-        type: [String],
-        default: [],
-      },
-      summary: {
-        type: String,
-        trim: true,
-      },
+      overallScore: Number,
+      communication: Number,
+      technical: Number,
+      confidence: Number,
+      improvements: [String],
+      summary: String,
     },
   },
   { timestamps: true }

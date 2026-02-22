@@ -73,7 +73,7 @@ export default function Login() {
 
         {/* Email */}
         <div className="relative mb-5">
-          <Mail className="absolute left-4 top-3.5 text-gray-400" size={18} />
+          <Mail className="absolute left-4 top-3.5 text-gray-500" size={18} />
           <input
             type="email"
             name="email"
@@ -81,7 +81,7 @@ export default function Login() {
             required
             value={formData.email}
             onChange={handleChange}
-            className="w-full pl-11 pr-4 py-3 rounded-full border border-gray-200 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-100 outline-none transition"
+            className="w-full pl-11 pr-4 py-3 rounded-full border bg-white text-black border-gray-400 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-100 outline-none transition"
           />
         </div>
 
@@ -96,7 +96,7 @@ export default function Login() {
             required
             value={formData.password}
             onChange={handleChange}
-            className="w-full pl-11 pr-11 py-3 rounded-full border border-gray-200 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-100 outline-none transition"
+            className="w-full pl-11 pr-4 py-3 rounded-full border bg-white text-black border-gray-400 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-100 outline-none transition"
           />
 
           <button

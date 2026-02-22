@@ -4,7 +4,6 @@ const API = axios.create({
   baseURL: import.meta.env.VITE_BACKEND,
 });
 
-// 🔥 Attach token automatically
 API.interceptors.request.use((config) => {
   const token = localStorage.getItem("token");
 
